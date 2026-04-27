@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CATALAN_FAIRS } from '../../../model/fairs';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './home.css',
 })
 export class Home {
-
+  public fairs: any[] = CATALAN_FAIRS;
 }
