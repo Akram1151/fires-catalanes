@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './view/pages/home/home';
 import { Fires } from './view/pages/fires/fires';
 import { Favorits } from './view/pages/favorits/favorits';
-import { ComarcaList } from './view/elements/comarca-list/comarca-list';
+import { Comarques } from './view/pages/comarques/comarques';
 
 export const routes: Routes = [
     {
@@ -11,7 +11,7 @@ export const routes: Routes = [
     },
     {
         path: 'comarques',
-        component: ComarcaList
+        component: Comarques
     },
     {
         path: 'fires',

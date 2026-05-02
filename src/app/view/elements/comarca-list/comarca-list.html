@@ -1,12 +1,37 @@
-<div class="comarques-container">
-  @for (comarca of comarques; track comarca) {
-    <div class="comarca-card">
-    <h2>{{ comarca.name }}</h2>
+@if (mode === 'slider') {
 
-    <p>{{ comarca.totalFires }} fires</p>
-    <p>{{ comarca.totalMunicipis }} municipis</p>
+  <div class="comarques-slider">
+    @for (comarca of comarques; track comarca.name) {
+      <div class="comarca-card">
+        <h3>{{ comarca.name }}</h3>
+        <p>{{ comarca.totalFires }} fires</p>
 
-    <button>Veure fires</button>
-    </div>
-  }
-</div>
+        <button (click)="selectComarca(comarca.name)">
+          Veure fires
+        </button>
+      </div>
+    }
+  </div>
+
+} @else {
+
+
+  <div class="comarques-grid">
+    @for (comarca of pagedComarques; track comarca.name) {
+      <div class="comarca-card big">
+        <h2>{{ comarca.name }}</h2>
+        <p>{{ comarca.totalFires }} fires</p>
+
+        <button (click)="selectComarca(comarca.name)">
+          Veure fires
+        </button>
+      </div>
+    }
+  </div>
+  <div class="pagination" style="display: flex; justify-content: center; gap: 16px; margin: 24px 0;">
+    <button (click)="prevPage()" [disabled]="page === 1">Anterior</button>
+    <span>Pàgina {{ page }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="page === totalPages">Següent</button>
+  </div>
+
+}

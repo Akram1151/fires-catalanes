@@ -1,2 +1,8 @@
-<h1>Pàgina Home</h1>
-<h1>Total de fires: {{ fairs.length }}</h1>
+<app-comarca-list
+  mode="slider"
+  (comarcaSelected)="onComarcaSelected($event)">
+</app-comarca-list>
+
+@if (selectedComarca) {
+  <app-fires-list [comarca]="selectedComarca"></app-fires-list>
+}
