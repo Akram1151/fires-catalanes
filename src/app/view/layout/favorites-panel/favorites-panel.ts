@@ -38,11 +38,6 @@ export class FavoritesPanel {
     });
   }
 
-  goToFavoritesPage() {
-    this.closePanel();
-    this.router.navigate(['/favorites']);
-  }
-
   @HostListener('window:favoritesUpdated')
   onFavoritesUpdated() {
     this.loadFavorites();

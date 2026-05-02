@@ -97,8 +97,7 @@
   margin-top: 12px;
 }
 
-.panel-actions button,
-.see-all-button {
+.panel-actions button {
   padding: 8px 12px;
   border: none;
   border-radius: 8px;
@@ -106,10 +105,6 @@
   color: #ffffff;
   font-weight: 600;
   cursor: pointer;
-}
-
-.see-all-button {
-  width: 100%;
 }
 
 .empty-panel {
