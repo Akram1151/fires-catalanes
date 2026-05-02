@@ -25,5 +25,9 @@ export const routes: Routes = [
     {
         path: 'favorits',
         component: Favorits
+    },
+    {
+        path: 'favorites',
+        component: Favorits
     }
 ];

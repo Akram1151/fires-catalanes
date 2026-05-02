@@ -11,9 +11,11 @@
             <button (click)="goToDetail(fair)">
                 Veure detall
             </button>
-            <button>
-                Favorit
-            </button>
+            <app-favorite-toggle
+                [fair]="fair"
+                addLabel="Afegir"
+                removeLabel="Treure">
+            </app-favorite-toggle>
         </div>
     </div>
     }
@@ -45,9 +47,11 @@
                 Veure detall
             </button>
 
-            <button>
-                Favorit
-            </button>
+            <app-favorite-toggle
+                [fair]="fair"
+                addLabel="Afegir"
+                removeLabel="Treure">
+            </app-favorite-toggle>
         </div>
     </div>
     }

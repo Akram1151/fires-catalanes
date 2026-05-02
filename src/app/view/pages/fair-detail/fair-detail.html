@@ -48,9 +48,7 @@
     </span>
   </div>
 
-  <button (click)="toggleFavorite()">
-    {{ isFav() ? 'Treure de favorits' : 'Afegir a favorits' }}
-  </button>
+  <app-favorite-toggle [fair]="fair"></app-favorite-toggle>
 
   <div class="actions">
     <button (click)="goBack()">Tornar enrere</button>

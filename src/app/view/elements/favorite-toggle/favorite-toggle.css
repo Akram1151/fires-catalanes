@@ -1,0 +1,27 @@
+.favorite-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 2px solid #c62828;
+  border-radius: 8px;
+  background: #fff7d6;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.favorite-button:hover {
+  background: #ffe082;
+}
+
+.favorite-button.active {
+  background: #c62828;
+  color: #ffffff;
+}
+
+.icon {
+  font-size: 1rem;
+  line-height: 1;
+}

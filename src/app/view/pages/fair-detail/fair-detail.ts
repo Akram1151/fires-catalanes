@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
+import { FavoriteToggle } from '../../elements/favorite-toggle/favorite-toggle';
 
 @Component({
     selector: 'app-fair-detail',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, FavoriteToggle],
     templateUrl: './fair-detail.html',
     styleUrl: './fair-detail.css',
 })
 export class FairDetail {
 
     fair: any = null;
-    isFavorite = false;
-
     constructor(private location: Location) {
         this.loadFair();
-        this.loadFavoriteState();
     }
 
     loadFair() {
@@ -30,40 +28,7 @@ export class FairDetail {
         }
     }
 
-    loadFavoriteState() {
-        const favs = this.getFavorites();
-        this.isFavorite = favs.some(
-            (f: any) => f.activityId === this.fair?.activityId
-        );
-    }
-
-    toggleFavorite() {
-        let favs = this.getFavorites();
-
-        const index = favs.findIndex(
-            (f: any) => f.activityId === this.fair.activityId
-        );
-
-        if (index >= 0) {
-            favs.splice(index, 1);
-            this.isFavorite = false;
-        } else {
-            favs.push(this.fair);
-            this.isFavorite = true;
-        }
-
-        localStorage.setItem('favorites', JSON.stringify(favs));
-    }
-
-    getFavorites() {
-        return JSON.parse(localStorage.getItem('favorites') || '[]');
-    }
-
     goBack() {
         this.location.back();
-    }
-
-    isFav() {
-        return this.isFavorite;
     }
 }

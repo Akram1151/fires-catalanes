@@ -1,1 +1,33 @@
-<h1>Pàgina Favorits</h1>
+<section class="favorites-page">
+  <div class="favorites-header">
+    <h1>Fires favorites</h1>
+    <p>Les fires guardades a localStorage amb la clau `favorites`.</p>
+  </div>
+
+  @if (favorites.length) {
+    <div class="favorites-list">
+      @for (fair of favorites; track fair.activityId) {
+        <article class="favorite-card">
+          <div class="favorite-info">
+            <h2>{{ fair.activityName }}</h2>
+            <p><b>Municipi:</b> {{ fair.municipalityName }}</p>
+            <p><b>Data:</b> {{ fair.date }}</p>
+          </div>
+
+          <div class="favorite-actions">
+            <button type="button" (click)="goToDetail(fair)">Veure detall</button>
+            <app-favorite-toggle
+              [fair]="fair"
+              removeLabel="Eliminar de favorits"
+              (favoriteChanged)="loadFavorites()">
+            </app-favorite-toggle>
+          </div>
+        </article>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      Encara no tens cap fira guardada a favorits.
+    </div>
+  }
+</section>

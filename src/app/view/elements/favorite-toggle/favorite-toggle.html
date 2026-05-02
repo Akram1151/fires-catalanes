@@ -1,0 +1,11 @@
+<button
+  type="button"
+  class="favorite-button"
+  [class.active]="isFavorite()"
+  [attr.aria-pressed]="isFavorite()"
+  (click)="toggleFavorite($event)">
+  <span class="icon">{{ isFavorite() ? '★' : '☆' }}</span>
+  @if (!iconOnly) {
+    <span>{{ getButtonLabel() }}</span>
+  }
+</button>

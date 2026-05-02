@@ -2,10 +2,11 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CATALAN_FAIRS } from '../../../model/fairs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FavoriteToggle } from '../favorite-toggle/favorite-toggle';
 
 @Component({
   selector: 'app-fires-list',
-  imports: [CommonModule],
+  imports: [CommonModule, FavoriteToggle],
   templateUrl: './fires-list.html',
   styleUrl: './fires-list.css',
 })
