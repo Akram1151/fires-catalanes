@@ -1,0 +1,50 @@
+.fair-detail-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fffbe6;
+  border: 2px solid #c62828;
+  border-radius: 18px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.fair-detail-container h1 {
+  color: #c62828;
+  margin-bottom: 18px;
+}
+.fair-detail-container .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-bottom: 18px;
+}
+.fair-detail-container .meta span {
+  min-width: 220px;
+  font-size: 1.08rem;
+}
+.fair-detail-container button {
+  margin: 10px 10px 10px 0;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #c62828;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.fair-detail-container button:hover {
+  background: #8b0000;
+}
+.fair-detail-container .actions {
+  margin-top: 18px;
+}
+.fair-detail-container .json-dump {
+  margin-top: 32px;
+  background: #f4c54222;
+  border-radius: 8px;
+  padding: 18px;
+  font-size: 0.98rem;
+  color: #222;
+  overflow-x: auto;
+}

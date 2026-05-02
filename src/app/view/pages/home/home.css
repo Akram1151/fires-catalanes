@@ -1,0 +1,27 @@
+.home-section {
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+/* separació clara de fires */
+.fires-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff8e1;
+  border-radius: 16px;
+}
+
+/* header fires */
+.fires-header {
+  margin-bottom: 16px;
+}
+
+.fires-header h2 {
+  margin: 0;
+  color: #c62828;
+}
+
+.fires-header p {
+  margin: 4px 0 0;
+  color: #666;
+}

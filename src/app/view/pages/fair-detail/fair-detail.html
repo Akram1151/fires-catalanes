@@ -1,0 +1,60 @@
+<div class="fair-detail-container">
+  <h1>{{ fair?.activityName }}</h1>
+  <div class="meta">
+    <span><b>ID activitat:</b> {{ fair?.activityId }}</span>
+    <span><b>Nom activitat:</b> {{ fair?.activityName }}</span>
+    <span><b>Comarca:</b> {{ fair?.regionName }} ({{ fair?.regionId }})</span>
+    <span><b>Poble:</b> {{ fair?.municipalityName }} ({{ fair?.municipalityId }})</span>
+    <span><b>Town ID:</b> {{ fair?.townId }}</span>
+    <span><b>Adreça:</b> {{ fair?.organizerAddress || 'No disponible' }}</span>
+    <span><b>Ubicació:</b> {{ fair?.location || 'No disponible' }}</span>
+    <span><b>Data:</b> {{ fair?.date }}</span>
+    <span><b>Inici:</b> {{ fair?.iniDate }}</span>
+    <span><b>Fi:</b> {{ fair?.endDate }}</span>
+    <span><b>Periodicitat:</b> {{ fair?.periodicityName }}</span>
+    <span><b>Any primera edició:</b> {{ fair?.firstYear }}</span>
+    <span><b>Sector:</b> {{ fair?.sectorName }} ({{ fair?.sectorId }})</span>
+    <span><b>Àmbit:</b> {{ fair?.fieldName }} ({{ fair?.fieldId }})</span>
+    <span><b>Productes:</b> {{ fair?.products || 'No disponible' }}</span>
+    <span><b>Nombre expositors:</b> {{ fair?.nexhibitors || 'No disponible' }}</span>
+    <span><b>Nombre visitants:</b> {{ fair?.nvisitors || 'No disponible' }}</span>
+    <span><b>Superfície (m²):</b> {{ fair?.surface || 'No disponible' }}</span>
+    <span><b>Calendari ID:</b> {{ fair?.calendarsId }}</span>
+    <span><b>Descripció:</b> {{ fair?.description?.length ? fair.description.join(' ') : 'No disponible' }}</span>
+  </div>
+
+  <div class="meta">
+    <span><b>Organitzador:</b> {{ fair?.organizerName }} ({{ fair?.organizerId }})</span>
+    <span><b>Telèfon:</b> {{ fair?.organizerPhone || 'No disponible' }}</span>
+    <span><b>Fax:</b> {{ fair?.organizerFax || 'No disponible' }}</span>
+    <span><b>Email:</b> {{ fair?.email || 'No disponible' }}</span>
+    <span><b>Web:</b>
+      <ng-container *ngIf="fair?.web; else noWeb">
+        <a [href]="fair.web.startsWith('http') ? fair.web : 'https://' + fair.web" target="_blank">{{ fair.web }}</a>
+      </ng-container>
+      <ng-template #noWeb>No disponible</ng-template>
+    </span>
+  </div>
+
+  <div class="meta">
+    <span><b>Imatges:</b>
+      @if (fair?.images?.length) {
+        <span class="images">
+          @for (img of fair.images; track img) {
+            <img [src]="img" alt="Imatge fira" width="120" style="margin-right:8px; margin-bottom:8px; border-radius:6px; border:1px solid #ccc;" />
+          }
+        </span>
+      } @else { No disponible }
+    </span>
+  </div>
+
+  <button (click)="toggleFavorite()">
+    {{ isFav() ? 'Treure de favorits' : 'Afegir a favorits' }}
+  </button>
+
+  <div class="actions">
+    <button (click)="goBack()">Tornar enrere</button>
+  </div>
+
+  <pre class="json-dump">{{ fair | json }}</pre>
+</div>

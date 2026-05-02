@@ -1,11 +1,22 @@
-<app-comarca-list
-  mode="slider"
-  (comarcaSelected)="onComarcaSelected($event)">
-</app-comarca-list>
+<section class="home-section">
+  <app-comarca-list
+    mode="slider"
+    (comarcaSelected)="onComarcaSelected($event)">
+  </app-comarca-list>
+</section>
 
 @if (selectedComarca) {
-  <app-fires-list
-    [comarca]="selectedComarca"
-    mode="slider">
-  </app-fires-list>
+  <section class="home-section fires-section">
+
+    <div class="fires-header">
+      <h2>Fires de {{ selectedComarca }}</h2>
+      <p>Explora les fires disponibles</p>
+    </div>
+
+    <app-fires-list
+      [comarca]="selectedComarca"
+      mode="slider">
+    </app-fires-list>
+
+  </section>
 }

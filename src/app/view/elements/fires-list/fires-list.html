@@ -4,11 +4,17 @@
     @for (fair of filteredFairs; track fair.activityId) {
     <div class="fair-card small">
         <h4>{{ fair.activityName }}</h4>
-        <p>{{ fair.municipalityName }}</p>
-
-        <button (click)="goToDetail(fair)">
-            Veure detall
-        </button>
+        <p><b>Poble:</b> {{ fair.municipalityName }}</p>
+        <p><b>Data:</b> {{ fair.date }}</p>
+        <p><b>Sector:</b> {{ fair.sectorName }}</p>
+        <div class="actions">
+            <button (click)="goToDetail(fair)">
+                Veure detall
+            </button>
+            <button>
+                Favorit
+            </button>
+        </div>
     </div>
     }
 </div>
