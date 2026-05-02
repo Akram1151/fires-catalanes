@@ -1,0 +1,129 @@
+.floating-favorites-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 999px;
+  background: #c62828;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.floating-favorites-button.open {
+  background: #8b0000;
+}
+
+.favorites-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.favorites-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1002;
+  width: min(420px, 92vw);
+  height: 100vh;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: linear-gradient(180deg, #fff8dc 0%, #fffdf4 100%);
+  border-left: 4px solid #c62828;
+  box-shadow: -14px 0 30px rgba(0, 0, 0, 0.18);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.panel-header h2 {
+  margin: 0 0 6px;
+  color: #c62828;
+}
+
+.panel-header p {
+  margin: 0;
+  color: #5c4033;
+  font-weight: 600;
+}
+
+.close-button {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #8b0000;
+}
+
+.panel-list {
+  flex: 1;
+  overflow-y: auto;
+  display: grid;
+  gap: 14px;
+  padding-right: 4px;
+}
+
+.panel-card {
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 2px solid #f4c542;
+}
+
+.panel-info h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.panel-info p {
+  margin: 4px 0;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.panel-actions button,
+.see-all-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #c62828;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.see-all-button {
+  width: 100%;
+}
+
+.empty-panel {
+  padding: 20px;
+  border-radius: 14px;
+  background: #fff1c1;
+  border: 2px dashed #c62828;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .floating-favorites-button {
+    right: 16px;
+    bottom: 16px;
+  }
+}

@@ -1,0 +1,53 @@
+<button
+  type="button"
+  class="floating-favorites-button"
+  [class.open]="isOpen"
+  (click)="togglePanel()">
+  {{ isOpen ? 'Tancar favorits' : 'Veure favorits' }}
+</button>
+
+@if (isOpen) {
+  <div class="favorites-overlay" (click)="closePanel()"></div>
+
+  <aside class="favorites-panel">
+    <div class="panel-header">
+      <div>
+        <h2>Fires favorites</h2>
+        <p>{{ favorites.length }} guardades</p>
+      </div>
+
+      <button type="button" class="close-button" (click)="closePanel()">✕</button>
+    </div>
+
+    @if (favorites.length) {
+      <div class="panel-list">
+        @for (fair of favorites; track fair.activityId) {
+          <article class="panel-card">
+            <div class="panel-info">
+              <h3>{{ fair.activityName }}</h3>
+              <p>{{ fair.municipalityName }}</p>
+              <p>{{ fair.date }}</p>
+            </div>
+
+            <div class="panel-actions">
+              <button type="button" (click)="goToDetail(fair)">Detall</button>
+              <app-favorite-toggle
+                [fair]="fair"
+                removeLabel="Eliminar"
+                (favoriteChanged)="loadFavorites()">
+              </app-favorite-toggle>
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <div class="empty-panel">
+        Encara no tens cap fira als favorits.
+      </div>
+    }
+
+    <button type="button" class="see-all-button" (click)="goToFavoritesPage()">
+      Obrir pàgina de favorits
+    </button>
+  </aside>
+}

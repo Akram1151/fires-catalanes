@@ -57,5 +57,6 @@ export class FavoriteToggle {
 
   private saveFavorites(favorites: any[]) {
     localStorage.setItem('favorites', JSON.stringify(favorites));
+    window.dispatchEvent(new CustomEvent('favoritesUpdated'));
   }
 }
