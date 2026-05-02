@@ -1,0 +1,46 @@
+.comarques-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  padding: 40px;
+}
+
+.comarca-card {
+  background: #f4c542;
+  border: 3px solid #c62828;
+  border-radius: 16px;
+  padding: 30px;
+  min-height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.comarca-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: #c62828;
+  color: white;
+}
+
+.comarca-card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.comarca-card p {
+  margin: 4px 0;
+}
+
+.comarca-card button {
+  margin-top: 15px;
+  padding: 8px;
+  border: none;
+  background: #8b0000;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+<div class="comarques-container">
+  @for (comarca of comarques; track comarca) {
+    <div class="comarca-card">
+    <h2>{{ comarca.name }}</h2>
+
+    <p>{{ comarca.totalFires }} fires</p>
+    <p>{{ comarca.totalMunicipis }} municipis</p>
+
+    <button>Veure fires</button>
+    </div>
+  }
+</div>
