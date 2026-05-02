@@ -1,12 +1,23 @@
-<header>
+<header class="header">
   <div class="logo">
     Fires Catalanes
   </div>
 
-  <nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/comarques">Comarques</a>
-    <a routerLink="/fires">Fires</a>
-    <a routerLink="/favorits">Favorits</a>
+  <nav class="nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </a>
+
+    <a routerLink="/comarques" routerLinkActive="active">
+      Comarques
+    </a>
+
+    <a routerLink="/fires" routerLinkActive="active">
+      Fires
+    </a>
+
+    <a routerLink="/favorits" routerLinkActive="active">
+      Favorits
+    </a>
   </nav>
 </header>

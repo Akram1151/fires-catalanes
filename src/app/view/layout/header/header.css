@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  background: #f4c542;
+  border-bottom: 4px solid #c62828;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #c62828;
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #8b0000;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.nav a:hover {
+  background: rgba(198, 40, 40, 0.12);
+}
+
+.nav a.active {
+  background: #c62828;
+  color: white;
+}
