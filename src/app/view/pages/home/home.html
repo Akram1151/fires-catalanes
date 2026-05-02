@@ -4,5 +4,8 @@
 </app-comarca-list>
 
 @if (selectedComarca) {
-  <app-fires-list [comarca]="selectedComarca"></app-fires-list>
+  <app-fires-list
+    [comarca]="selectedComarca"
+    mode="slider">
+  </app-fires-list>
 }

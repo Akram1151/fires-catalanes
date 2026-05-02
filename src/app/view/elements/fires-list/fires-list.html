@@ -1,0 +1,55 @@
+@if (mode === 'slider') {
+
+<div class="fires-slider">
+    @for (fair of filteredFairs; track fair.activityId) {
+    <div class="fair-card small">
+        <h4>{{ fair.activityName }}</h4>
+        <p>{{ fair.municipalityName }}</p>
+
+        <button (click)="goToDetail(fair)">
+            Veure detall
+        </button>
+    </div>
+    }
+</div>
+
+} @else {
+@if (comarca) {
+<div class="filter-info">
+    Fires de la comarca: <b>{{ comarca }}</b>
+</div>
+} @else {
+<div class="filter-info all">
+    Mostrant totes les fires
+</div>
+}
+
+
+<div class="fires-grid">
+    @for (fair of pagedFairs; track fair.activityId) {
+    <div class="fair-card big">
+        <h3>{{ fair.activityName }}</h3>
+
+        <p><b>Poble:</b> {{ fair.municipalityName }}</p>
+        <p><b>Data:</b> {{ fair.date }}</p>
+        <p><b>Sector:</b> {{ fair.sectorName }}</p>
+
+        <div class="actions">
+            <button (click)="goToDetail(fair)">
+                Veure detall
+            </button>
+
+            <button>
+                Favorit
+            </button>
+        </div>
+    </div>
+    }
+</div>
+<div class="pagination" style="display: flex; justify-content: center; gap: 16px; margin: 24px 0;">
+    <button (click)="prevPage()" [disabled]="page === 1">Anterior</button>
+    <span>Pàgina {{ page }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="page === totalPages">Següent</button>
+</div>
+
+}
